@@ -196,6 +196,10 @@ body {
   text-align: justify;
 }
 
+.comment-text h5 {
+  margin-left: 5px;
+}
+
 #comments-list {
   list-style: none;
 }
