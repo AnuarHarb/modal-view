@@ -37,7 +37,7 @@
 
   var imgs = [
     {
-      name: "image1",
+      name: "river",
       path: "img/river.jpg",
       comments: ["cool", "=)"],
       likes: 0
@@ -65,17 +65,22 @@
   function addComments(imgName){
     var newComment = document.getElementById("new-comment").value
     console.log(newComment);
-    console.log(imgs);
     imgs.forEach( i => {
+      console.log(i.name + " " + imgName);
       if (i.name == imgName){
         i.comments.push(newComment);
         listComments(imgName);
         console.log(imgs);
       }
     });
+    document.getElementById("new-comment").value = ""
   }
 
   function listComments(imgName){
+    var ul = document.getElementById("comments-list");
+    while (ul.firstChild) {
+      ul.removeChild(ul.firstChild)
+    }
     imgs.forEach( i => {
       if (i.name == imgName){
         i.comments.forEach( c => {
