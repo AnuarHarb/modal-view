@@ -6,8 +6,87 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="stylesheet" href="styles.css">
+<script>
+var inputs = document.querySelectorAll( '.inputfile' );
+Array.prototype.forEach.call( inputs, function( input )
+{
+	var label	 = input.nextElementSibling,
+		labelVal = label.innerHTML;
+
+	input.addEventListener( 'change', function( e )
+	{
+		var fileName = '';
+		if( this.files && this.files.length > 1 )
+			fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+		else
+			fileName = e.target.value.split( '\\' ).pop();
+
+		if( fileName )
+			label.querySelector( 'span' ).innerHTML = fileName;
+		else
+			label.innerHTML = labelVal;
+	});
+});
+function openImage(){
+	/*
+  document.getElementById('oculto').style.display = 'block';
+*/
+alert("Aqui vemos el modal");
+}
+</script>
 </head>
 <body>
+  <div id="oculto"></div>
+<div class="container">
+<div id="headergaleria">
+<div id="iconfoto"><img src="img/foto.png" width="30px"/> FOTOS</div>
+<div id="botones">
+  <button width="25px"> + Crear Album</button>
+  <input type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple />
+<label for="file">Choose a file</label>
+<button type="submit" name="aceptar" id="aceptar" width="25px">Subir</button>
+  <button width="25px"><img src="img/lapiz.png" width="12px"/></button>
+</div>
+<br>
+<div id="tabs">
+  <a href="#">Fotos en las que apareces</a> <a href="#">Tus fotos</a> <a href="#">Álbumes</a>
+</div>
+</div>
+<br>
+<br>
+<br>
+<img src="img/galeria.jpg" onclick="openImage()" class="imagenes"/>
+<img src="img/galeria2.jpg" onclick="openImage()" class="imagenes"/>
+<img src="img/galeria3.jpg" onclick="openImage()" class="imagenes"/>
+<img src="img/galeria4.jpg" onclick="openImage()" class="imagenes"/>
+<img src="img/galeria5.jpg" onclick="openImage()" class="imagenes"/>
+<img src="img/galeria6.jpg" onclick="openImage()" class="imagenes"/>
+<img src="img/galeria7.jpg" onclick="openImage()" class="imagenes"/>
+<img src="img/galeria8.jpg" onclick="openImage()" class="imagenes"/>
+<img src="img/galeria9.jpg" onclick="openImage()" class="imagenes"/>
+<img src="img/galeria9.jpg" onclick="openImage()" class="imagenes"/>
+<img src="img/galeria10.jpg" onclick="openImage()" class="imagenes"/>
+<img src="img/galeria.jpg" onclick="openImage()" class="imagenes"/>
+<img src="img/galeria2.jpg" onclick="openImage()" class="imagenes"/>
+<img src="img/galeria3.jpg" onclick="openImage()" class="imagenes"/>
+<img src="img/galeria4.jpg" onclick="openImage()" class="imagenes"/>
+<img src="img/galeria5.jpg" onclick="openImage()" class="imagenes"/>
+<img src="img/galeria6.jpg" onclick="openImage()" class="imagenes"/>
+<img src="img/galeria7.jpg" onclick="openImage()" class="imagenes"/>
+<img src="img/galeria8.jpg" onclick="openImage()" class="imagenes"/>
+<img src="img/galeria9.jpg" onclick="openImage()" class="imagenes"/>
+<img src="img/galeria10.jpg" onclick="openImage()" class="imagenes"/>
+<img src="img/galeria.jpg" onclick="openImage()" class="imagenes"/>
+<img src="img/galeria2.jpg" onclick="openImage()" class="imagenes"/>
+<img src="img/galeria3.jpg" onclick="openImage()" class="imagenes"/>
+<img src="img/galeria4.jpg" onclick="openImage()" class="imagenes"/>
+<img src="img/galeria5.jpg" onclick="openImage()" class="imagenes"/>
+<img src="img/galeria6.jpg" onclick="openImage()" class="imagenes"/>
+<img src="img/galeria7.jpg" onclick="openImage()" class="imagenes"/>
+<img src="img/galeria8.jpg" onclick="openImage()" class="imagenes"/>
+<img src="img/galeria9.jpg" onclick="openImage()" class="imagenes"/>
+<img src="img/galeria10.jpg" onclick="openImage()" class="imagenes"/>
+</div>
 
 <script src="scripts.js"></script>
 </body>
