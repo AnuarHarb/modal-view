@@ -4,11 +4,77 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Modal-view</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<script src="scripts.js"></script>
+  <button id="button" value="image1" >Modal</button>
+
+  <section id="modal">
+    <article>
+      <figure class="spotlight">
+        <img id="bigImage" src="img/river.jpg" alt="">
+        <div class="image-overlay">
+
+        </div>
+      </figure>
+      <div class="modal-info">
+        <div class="user-info">
+          <div class="user">
+            <figure>
+              <img src="img/river.jpg" alt="">
+            </figure>
+            <div>
+              <a>User</a>
+              <h5>Date</h6>
+            </div>
+          </div>
+          <p id="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, consequatur non est repellat, obcaecati tempora, beatae harum magni quia dolor tempore voluptas dicta, neque reiciendis dignissimos ratione aspernatur cum vitae!</p>
+          <hr>
+          <div class="interactions">
+            <div><i class="fa fa-thumbs-up" aria-hidden="true"></i>Me Gusta</div>
+            <div><i class="fa fa-comment" aria-hidden="true"></i>Comentar</div>
+            <div><i class="fa fa-share" aria-hidden="true"></i>Compartir</div>
+          </div>
+        </div>
+        <hr>
+        <div class="comments">
+          <div class="likes">
+            <div><i class="fa fa-gratipay" aria-hidden="true"></i>10</div>
+            <div>comentarios destacados</div>
+          </div>
+          <hr>
+            <div class="make-comment">
+              <div class="comment-user">
+                <figure>
+                  <img src="img/river.jpg" alt="">
+                </figure>
+                <div>
+                  <input type="text">
+                </div>
+            </div>
+          <ul id="comments-list">
+            <li>
+              <hr>
+              <div class="comment-user">
+                <figure>
+                  <img src="img/river.jpg" alt="">
+                </figure>
+                <div class="comment-text">
+                  <h5>David</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio quidem tempore ipsam consectetur eius temporibus dolores similique impedit, maxime, at aliquid maiores vero. Quo esse magni similique, molestias perspiciatis sunt!</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </article>
+  </section>
+  <div id="modal-shadow">
+  </div>
+  <script src="https://use.fontawesome.com/fba5f4cd08.js"></script>
+  <script src="scripts.js"></script>
 </body>
 </html>
