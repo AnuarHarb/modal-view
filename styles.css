@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
 }
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -55,7 +54,7 @@ table {
 }
 
 body{
-
+font-family: arial;
 margin: 0px;
 padding:0px;
 background-image: url("img/fondo.jpg");
@@ -154,4 +153,200 @@ text-align:left;
 .inputfile:focus + label {
 	outline: 1px dotted #000;
 	outline: -webkit-focus-ring-color auto 5px;
+}
+#modal-shadow {
+  background-color: black;
+  display: none;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  opacity: .8;
+  top: 0;
+  z-index: 1;
+}
+
+#modal {
+  bottom: 0;
+  display: none;
+  left: 0;
+  right: 0;
+  position: absolute;
+  margin: 10%;
+  top: 0;
+  z-index: 2;
+}
+
+#modal.active,
+#modal-shadow.active {
+  display: inherit;
+}
+#modal article {
+  height: 450px;
+  margin: 0 auto;
+  width: 900px;
+}
+
+#modal .spotlight {
+  background-color: black;
+  display: inline-block;
+  height: 450px;
+  position: relative;
+  vertical-align: top;
+  width: 550px;
+}
+#modal .spotlight img {
+  display: inline;
+  max-height: 100%;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+#modal .image-overlay:hover {
+  background-color: black;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  opacity: .5;
+  right: 0;
+  top: 0;
+}
+
+.modal-info {
+  background-color: white;
+  display: inline-block;
+  height: 100%;
+  overflow-y: scroll;
+  vertical-align: top;
+  width: 300px;
+}
+
+.user-info {
+  padding: 0 15px;
+
+}
+.user {
+  margin: 20px 0;
+}
+.user figure {
+  border: 1px solid lightgray;
+  display: inline-block;
+  height: 35px;
+  vertical-align: top;
+  width: 35px;
+}
+
+.user figure img {
+  height: 100%;
+  width: 100%;
+}
+
+.user div {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.user a {
+  color: #365899;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.38em;
+  text-decoration: none;
+}
+
+.user h5{
+  color: gray;
+  font-size: 12px;
+}
+
+.modal-info p {
+  margin-bottom: 50px;
+}
+
+.interactions {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px 0;
+}
+
+.interactions div {
+  color: gray;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.interactions div i{
+  margin-right: 5px;
+}
+
+.interactions div:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.likes {
+  height: 10px;
+  padding: 10px;
+}
+.likes div{
+  color: gray;
+  font-size: 12px;
+  display: inline-block;
+}
+
+.likes div:first-child{
+  float: left;
+}
+
+.likes div:last-child{
+  float: right;
+}
+.comments {
+  background-color: #F6F7F9;
+  padding: 0 15px;
+}
+.comment-user {
+  margin: 20px 0;
+  }
+
+.comment-user figure {
+  border: 1px solid lightgray;
+  display: inline-block;
+  height: 25px;
+  vertical-align: top;
+  width: 25px;
+}
+
+.comment-user figure img {
+  height: 100%;
+  width: 100%;
+}
+.comment-user div {
+  display: inline-block;
+}
+.comment-user input {
+  font-size: 10px;
+  padding: 5px;
+  width: 210px;
+}
+
+.comment-user .comment-text {
+  display: inline-block;
+  width: 210px;
+}
+.comment-text h5,
+.comment-text p {
+  display: inline;
+  font-size: 12px;
+  text-align: justify;
+}
+
+.comment-text h5 {
+  margin-left: 5px;
+}
+
+#comments-list {
+  list-style: none;
 }
