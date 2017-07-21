@@ -36,15 +36,19 @@ alert("Aqui vemos el modal");
 </script>
 </head>
 <body>
+<div id="menu-imagen">
+<img src="img/menu.jpg" width="900px"/></div>
 <div class="container">
 <div id="headergaleria">
 <div id="iconfoto"><img src="img/foto.png" width="30px"/> FOTOS</div>
 <div id="botones">
-  <button width="25px"> + Crear Album</button>
+  <label> + Crear Album</label>
   <input type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple />
-<label for="file">Choose a file</label>
-<button type="submit" name="aceptar" id="aceptar" width="25px">Subir</button>
-  <button width="25px"><img src="img/lapiz.png" width="12px"/></button>
+  <label for="file">Subir Fotos / Video</label>
+  <button type="submit" name="aceptar" id="aceptar"><img src="img/lapiz.png" width="12px"/></button>
+</div>
+<div id="lapiz">
+  <div id="lab"></div>
 </div>
 <br>
 <div id="tabs">
