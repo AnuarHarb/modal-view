@@ -73,6 +73,7 @@ body,input,label,button{
 }
 .imagenes{
   border:2px solid #e6e6e6;
+  cursor: pointer;
 	width: 195px;
 	height: 200px;
 	position: relative;
@@ -221,6 +222,7 @@ text-align:left;
   display: inline;
   max-height: 100%;
   max-width: 100%;
+  margin-top: 20px;
   vertical-align: middle;
 }
 
@@ -292,6 +294,7 @@ text-align:left;
   padding: 5px 0;
 }
 
+
 .interactions div {
   color: gray;
   font-size: 12px;
@@ -308,6 +311,9 @@ text-align:left;
   text-decoration: underline;
 }
 
+.liked {
+  color: blue;
+}
 .likes {
   height: 10px;
   padding: 10px;

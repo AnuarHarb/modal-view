@@ -1,5 +1,5 @@
 (function() {
-  // 'use strict'
+  'use strict'
 
   var image;
   var imgs = [
@@ -42,7 +42,6 @@
   }
   listImages()
 
-  // document.getElementById("modal").addEventListener("click", deactivateModal);
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' || event.keyCode === 27) {
         deactivateModal();
@@ -121,7 +120,7 @@
           li.appendChild(div2)
 
           var ul = document.getElementById("comments-list");
-          ul.appendChild(li);
+          ul.insertBefore(li, ul.childNodes[0]);
         });
       }
     });
@@ -160,13 +159,10 @@
     imgs.push(imageObj)
   }
 
-  //document.getElementById("like").addEventListener("click", like);
+  document.getElementById("like").addEventListener("click", like);
   function like(){
-    imgs.forEach( i => {
-      if (i.name == image){
-        i.likes += 1;
-      }
-    });
+    like = document.getElementById("like");
+    like.toggleClass('liked')
   }
 
 })();
