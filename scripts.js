@@ -2,8 +2,46 @@
   // 'use strict'
 
   var image;
+  var imgs = [
+    {
+      name: "river",
+      path: "img/river.jpg",
+      comments: ["cool", "=)"],
+      likes: 0
+    },
+    {
+      name: "Chrysanthemum",
+      path: "img/Chrysanthemum.jpg",
+      comments: ["i love it", "<3"],
+      likes: 0
+    },
+    {
+      name: "Desert",
+      path: "img/Desert.jpg",
+      comments: [":O", "=)"],
+      likes: 0
+    },
+    {
+      name: "Koala",
+      path: "img/Koala.jpg",
+      comments: ["cool", "=)"],
+      likes: 0
+    }
+  ]
 
-  document.getElementById("button").addEventListener("click", activateModal);
+  function listImages() {
+    imgs.forEach( i => {
+    var div = document.getElementById("container-imgs");
+    var img = document.createElement("img");
+    img.setAttribute("alt", i.name);
+    img.src = i.path;
+    img.setAttribute("class", "imagenes selected");
+    img.addEventListener("click", activateModal);
+    div.appendChild(img);
+    });
+  }
+  listImages()
+
   // document.getElementById("modal").addEventListener("click", deactivateModal);
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' || event.keyCode === 27) {
@@ -17,17 +55,15 @@
     });
 
   function activateModal() {
-    image = this.value;
+    image = this.alt;
     var modal = document.getElementById('modal');
     var modalShadow = document.getElementById('modal-shadow');
     imageSelected(image);
     modal.setAttribute('class', 'active');
     modalShadow.setAttribute('class', 'active');
-
   }
 
   function deactivateModal() {
-    console.log(this);
     var modal = document.getElementById('modal');
     var modalShadow = document.getElementById('modal-shadow');
     modal.setAttribute('class', '');
@@ -35,47 +71,22 @@
   }
 
 
-  var imgs = [
-    {
-      name: "image1",
-      path: "img/river.jpg",
-      comments: ["cool", "=)"],
-      likes: 0
-    },
-    {
-      name: "image2",
-      path: "img/imagen1.png",
-      comments: ["cool", "=)"],
-      likes: 0
-    },
-    {
-      name: "image3",
-      path: "img/imagen1.png",
-      comments: ["cool", "=)"],
-      likes: 0
-    },
-    {
-      name: "image4",
-      path: "img/imagen1.png",
-      comments: ["cool", "=)"],
-      likes: 0
-    }
-  ]
-
   function addComments(imgName){
     var newComment = document.getElementById("new-comment").value
-    console.log(newComment);
-    console.log(imgs);
     imgs.forEach( i => {
       if (i.name == imgName){
         i.comments.push(newComment);
         listComments(imgName);
-        console.log(imgs);
       }
     });
+    document.getElementById("new-comment").value = ""
   }
 
   function listComments(imgName){
+    var ul = document.getElementById("comments-list");
+    while (ul.firstChild) {
+      ul.removeChild(ul.firstChild)
+    }
     imgs.forEach( i => {
       if (i.name == imgName){
         i.comments.forEach( c => {
@@ -116,44 +127,6 @@
     });
   }
 
-  function like(imgName){
-    imgs.forEach( i => {
-      if (i.name == imgName){
-        i.likes += 1;
-      }
-    });
-  }
-
-  // function addImage() {
-  //   var newImage = document.getElementById("myFile").files[0];
-  //
-  //   var img = document.createElement("img");
-  //   var path = window.URL.createObjectURL(newImage);
-  //   img.src = path;
-  //
-  //   var div = document.getElementById("container");
-  //   div.appendChild(img);
-  //
-  //   var imageObj = {
-  //    name: newImage.name,
-  //    path: path,
-  //    comments: [],
-  //    likes: 0
-  //   }
-  //
-  //   imgs.push(imageObj)
-  // }
-
-  function listImages() {
-    imgs.forEach( i => {
-    var div = document.getElementById("container");
-    var img = document.createElement("img");
-    img.src = i.path;
-    img.setAttribute("class", "")
-    div.appendChild(img);
-    });
-  }
-
   function imageSelected(imgName){
     imgs.forEach( i => {
       if (i.name == imgName){
@@ -164,9 +137,36 @@
   }
 
 
-  addComments("image1")
-  listComments("image1")
+  document.getElementById("aceptar").addEventListener("click", addImage);
+  function addImage() {
+    var newImage = document.getElementById("file").files[0];
 
-  console.log(imgs)
+    var img = document.createElement("img");
+    var path = window.URL.createObjectURL(newImage);
+    img.setAttribute("alt", newImage.name);
+    img.src = path;
+    img.setAttribute("class", "imagenes selected");
+    img.addEventListener("click", activateModal);
+
+    var div = document.getElementById("container-imgs");
+    div.appendChild(img);
+
+    var imageObj = {
+     name: newImage.name,
+     path: path,
+     comments: [],
+     likes: 0
+    }
+    imgs.push(imageObj)
+  }
+
+  //document.getElementById("like").addEventListener("click", like);
+  function like(){
+    imgs.forEach( i => {
+      if (i.name == image){
+        i.likes += 1;
+      }
+    });
+  }
 
 })();
